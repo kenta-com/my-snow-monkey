@@ -68,3 +68,6 @@ function hsm_add_fontawesome_icon( $atts ) {
 	return $output;
 }
 add_shortcode( 'hsm-fa', 'hsm_add_fontawesome_icon' );
+// カスタム投稿タイプ(呼び出し)
+add_action('init', 'create_post_type');
+
