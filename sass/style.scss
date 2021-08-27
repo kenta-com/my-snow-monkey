@@ -1,79 +1,9 @@
-//メディアクエリ////////////////////
-$layout-width-inner: 1024px;
-$breakpoints: (
-  "sp": "screen and (max-width: 640px)",
-  "tab": "screen and (max-width: #{$layout-width-inner - 1px})",
-  "pc": "screen and (min-width: #{$layout-width-inner})",
-);
+@import "base/base";
 
-@mixin mq($breakpoint: md) {
-  @media #{map-get($breakpoints, $breakpoint)} {
-    @content;
-  }
-}
-//project////////////////////////
-.margin-top{
-  margin-top: 80px !important;
-}
-.top-none{
-  padding-top: 0;
-  margin-top: 0;
-}
-.text-center{
-  text-align: center;
-}
-//footer///////////////////////////////////
-.l-footer-widget-area__item .menu {
-  display:flex;
-  position:relative
-}
-  .l-footer-widget-area__item .menu .menu-item{
-    margin:0 2em 0 0
-  }
-  .l-footer-widget-area__item .menu::before{
-  content:"CONTENTS";
-  position:absolute;
-  top:-2em;
-}
-.c-widget__title{
-  display: none;
-}
-//header//////////////////////////
-.header-box{
-  display: flex;
-}
-.header-btn{
-  margin: 0 8px;
-  padding: 10px;
-  border-radius: 10px;
-  display: block;
-  color: white;
-  transition: .3s;
-  &__mail{
-    background-color: #00D084;
-  }
-  &__call{
-    background-color:#EEEE22;
-  }
-  span{
-    margin-left: 8px;
-  }
-  &:hover{
-    transition: .3s;
-    opacity: 0.8;
-  }
-}
-//mv/////////////////////////////////////
-.mv-title{
-  text-shadow: 0 5px 6px #EEEE22;
-}
-//細かい変更/////////////////////////////////////////
-//お問合せボタンをスマホでも表示させる
-@media (max-width: 63.9375em) {
-  .u-invisible-md-down {
-    display: block!important;
-  }
-  .u-invisible-md-down .p-global-nav {
-    display: none;
-  }
-  }
+@import "module/btn";
+@import "module/header";
+@import "module/section-title";
+
+@import "page/contact";
+@import "page/evidence";
+@import "page/feature";

@@ -1,0 +1,50 @@
+//メディアクエリ////////////////////
+$layout-width-inner: 1024px;
+$breakpoints: (
+  "sp": "screen and (max-width: 640px)",
+  "tab": "screen and (max-width: #{$layout-width-inner - 1px})",
+  "pc": "screen and (min-width: #{$layout-width-inner})",
+);
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+/* レスポンシブ 管理画面用*/
+/* pc表示 */
+@media screen and (min-width:1024px){
+  .sp{
+    display:none;
+  }
+  .tab{
+  display:none;
+  }
+      .pc{
+    display:block;
+  }
+  }
+  /* スマホ表示 */
+  @media screen and (max-width:640px){
+      .pc{
+      display:none;
+    }
+    .tab{
+  display:none;
+    }
+    .sp{
+  display:block;
+    }
+  }
+  /* タブレット表示 */
+  @media screen and (min-width:641px) and (max-width:1023px){
+    .pc{
+      display:none;
+    }
+    .sp{
+  display:none;
+    }
+      .tab{
+      display:block;
+    }
+  }

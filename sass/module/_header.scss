@@ -1,0 +1,16 @@
+//お問合せボタンの背景
+.header-contact {
+  background-color: #FFB400;
+  & a{
+    @include mq(pc){
+      color: #fff !important;
+      transition: 0.3s;
+      &:hover{
+        color: #FFB400 !important;
+        background-color: #fff;
+        transition: 0.3s;
+      }
+    }
+
+  }
+  }
